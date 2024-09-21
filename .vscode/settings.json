@@ -1,0 +1,35 @@
+{
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"files.associations": {
+		"*.svg": "html"
+	},
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"astro",
+		"typescript",
+		"typescriptreact"
+	],
+	"[astro]": {
+		"editor.defaultFormatter": "astro-build.astro-vscode",
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "never"
+		}
+	},
+	"prettier.documentSelectors": [
+		"**/*.astro"
+	],
+	"tailwindCSS.classAttributes": [
+		"class",
+		"className",
+		"ngClass",
+		"class:list"
+	],
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	}
+}
