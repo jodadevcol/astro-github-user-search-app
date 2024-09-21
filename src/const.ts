@@ -1,0 +1,3 @@
+const TOKEN_AUTH_GITHUB = import.meta.env.GITHUB_PERSONAL_TOKEN;
+
+export { TOKEN_AUTH_GITHUB };
