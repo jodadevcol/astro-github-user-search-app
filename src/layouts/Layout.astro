@@ -1,4 +1,7 @@
 ---
+import "@fontsource/space-mono/400.css"
+import "@fontsource/space-mono/700.css"
+
 interface Props {
 	title: string
 }
@@ -25,7 +28,15 @@ const { title } = Astro.props
 </html>
 
 <style is:global>
+	html {
+		font-family: "Space Mono", monospace;
+	}
+
+	body {
+		@apply dark:bg-dark-200 text-dark-100;
+	}
+
 	main {
-		@apply mx-auto min-h-screen max-w-screen-xl px-5 lg:px-10;
+		@apply mx-auto max-w-screen-xl px-5 lg:px-10;
 	}
 </style>
