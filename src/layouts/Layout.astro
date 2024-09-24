@@ -33,10 +33,27 @@ const { title } = Astro.props
 	}
 
 	body {
-		@apply dark:bg-dark-200 text-dark-100;
+		@apply text-dark-100 dark:bg-dark-200;
 	}
 
 	main {
 		@apply mx-auto max-w-screen-xl px-5 lg:px-10;
+	}
+
+	input:-webkit-autofill,
+	input:-webkit-autofill:hover,
+	input:-webkit-autofill:focus,
+	textarea:-webkit-autofill,
+	textarea:-webkit-autofill:hover,
+	textarea:-webkit-autofill:focus,
+	select:-webkit-autofill,
+	select:-webkit-autofill:hover,
+	select:-webkit-autofill:focus {
+		font-family: inherit;
+		background-color: transparent !important;
+		border: 0px solid transparent;
+		-webkit-text-fill-color: #fff;
+		-webkit-box-shadow: 0 0 0px 1000px #1e2a47 inset;
+		transition: background-color 5000s ease-in-out 0s;
 	}
 </style>
