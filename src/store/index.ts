@@ -1,5 +1,15 @@
-import { atom } from 'nanostores';
+import { atom, map } from "nanostores"
 
-const searchGitHubUser = atom('')
+interface ConfigApp {
+	error: boolean
+	error_message: string
+}
 
-export {searchGitHubUser};
+const searchGitHubUser = atom("")
+
+const configApp = map<ConfigApp>({
+	error: false,
+	error_message: "",
+})
+
+export { searchGitHubUser, configApp }
