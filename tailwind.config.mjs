@@ -1,29 +1,30 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
 	theme: {
 		extend: {
 			fontFamily: {
-				mono: ['Space Mono', 'monospace'],
+				mono: ["Space Mono", "monospace"],
 			},
 			colors: {
 				shared: {
-					100: '#0079FF',
+					100: "#0079FF",
+					200: "#F74646",
 				},
 				light: {
-					100: '#697C9A',
-					200: '#4B6A9B',
-					300: '#2B3442',
-					400: '#F6F8FF',
-					500: '#FEFEFE',
+					100: "#697C9A",
+					200: "#4B6A9B",
+					300: "#2B3442",
+					400: "#F6F8FF",
+					500: "#FEFEFE",
 				},
 				dark: {
-					100: '#FFFFFF',
-					200: '#141D2F',
-					300: '#1E2A47',
-				}
+					100: "#FFFFFF",
+					200: "#141D2F",
+					300: "#1E2A47",
+				},
 			},
-			fontSize:{
+			fontSize: {
 				h1: [
 					"1.625rem",
 					{
@@ -59,7 +60,10 @@ export default {
 						fontWeight: "400",
 					},
 				],
-			}
+			},
+			maxWidth: {
+				"screen-md": "49rem",
+			},
 		},
 	},
 	plugins: [],
