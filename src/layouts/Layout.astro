@@ -21,23 +21,32 @@ const { title } = Astro.props
 	</head>
 
 	<body>
-		<main>
+		<div id="app">
 			<slot />
-		</main>
+		</div>
 	</body>
 </html>
 
 <style is:global>
 	html {
 		font-family: "Space Mono", monospace;
+		@apply opacity-100 transition-opacity duration-200 ease-out;
+
+		&.dark--active {
+			@apply pointer-events-none opacity-0;
+		}
 	}
 
 	body {
-		@apply text-dark-100 dark:bg-dark-200;
+		@apply bg-light-400 text-light-300 dark:bg-dark-200 dark:text-dark-100;
 	}
 
-	main {
-		@apply mx-auto max-w-screen-xl px-5 lg:px-10;
+	#app {
+		@apply mx-auto flex min-h-screen w-full max-w-screen-xl flex-col items-center justify-center gap-y-9 px-5 lg:px-10;
+	}
+
+	.container_app {
+		@apply mx-auto w-full max-w-screen-md;
 	}
 
 	input:-webkit-autofill,
@@ -52,8 +61,23 @@ const { title } = Astro.props
 		font-family: inherit;
 		background-color: transparent !important;
 		border: 0px solid transparent;
-		-webkit-text-fill-color: #fff;
-		-webkit-box-shadow: 0 0 0px 1000px #1e2a47 inset;
+		-webkit-text-fill-color: #2b3442;
+		-webkit-box-shadow: 0 0 0px 1000px #fefefe inset;
 		transition: background-color 5000s ease-in-out 0s;
+	}
+
+	html.dark {
+		input:-webkit-autofill,
+		input:-webkit-autofill:hover,
+		input:-webkit-autofill:focus,
+		textarea:-webkit-autofill,
+		textarea:-webkit-autofill:hover,
+		textarea:-webkit-autofill:focus,
+		select:-webkit-autofill,
+		select:-webkit-autofill:hover,
+		select:-webkit-autofill:focus {
+			-webkit-text-fill-color: #fff;
+			-webkit-box-shadow: 0 0 0px 1000px #1e2a47 inset;
+		}
 	}
 </style>
