@@ -1,0 +1,75 @@
+---
+import Moon from "./icons/Moon.astro"
+import Sun from "./icons/Sun.astro"
+---
+
+<header class="container_app flex items-center justify-between">
+	<div class="text-h1">devfinder</div>
+
+	<button data-darkmode class="inline-flex items-center gap-x-4">
+		<span data-darkmode-text class="darkmode-text text-h4 font-bold uppercase">Light</span>
+
+		<div data-darkmode-icons class="relative size-5">
+			<span class="light-icon-darkmode darkmode-icons absolute inset-0 size-full">
+				<Sun />
+			</span>
+
+			<span class="dark-icon-darkmode darkmode-icons darkmode--off absolute inset-0 size-full">
+				<Moon />
+			</span>
+		</div>
+	</button>
+</header>
+
+<style>
+	.darkmode-text {
+		@apply opacity-100 transition-opacity duration-200 ease-in;
+
+		&.darkmode--off {
+			@apply opacity-0;
+		}
+	}
+
+	.darkmode-icons {
+		@apply scale-100 opacity-100 transition-[transform,opacity] delay-200 duration-300 ease-in-out;
+
+		&.darkmode--off {
+			@apply scale-0 opacity-0;
+		}
+	}
+</style>
+
+<script>
+	const $darkmode = document.querySelector("[data-darkmode]")
+	const $html = document.querySelector("html")
+
+	$darkmode?.addEventListener("click", () => {
+		if (!$html) {
+			console.error("No html element found")
+			return
+		}
+
+		const isDark = $html.classList.contains("dark")
+		const $textMode = $darkmode.querySelector("[data-darkmode-text]")
+		const $iconLight = $darkmode.querySelector("[data-darkmode-icons] .light-icon-darkmode")
+		const $iconDark = $darkmode.querySelector("[data-darkmode-icons] .dark-icon-darkmode")
+
+		if ($iconLight === null || $iconDark === null || $textMode === null) {
+			console.error("Not found elements of darkmode works correctly")
+			return
+		}
+
+		$html.classList.add("dark--active")
+
+		setTimeout(() => {
+			$html.classList.toggle("dark")
+			$textMode.textContent = !isDark ? "Light" : "Dark"
+			$iconLight.classList.toggle("darkmode--off", isDark)
+			$iconDark.classList.toggle("darkmode--off", !isDark)
+		}, 300)
+
+		setTimeout(() => {
+			$html.classList.remove("dark--active")
+		}, 500)
+	})
+</script>
