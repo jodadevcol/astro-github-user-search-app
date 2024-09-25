@@ -1,6 +1,6 @@
 import type { GetResponseTypeFromEndpointMethod } from "@octokit/types"
 import { useCallback, useRef, useState } from "react"
-import { GETUserGitHub } from "../components/services/githubuser"
+import { GETUserGitHub } from "../services/githubuser"
 import { useStore } from "@nanostores/react"
 import { configApp } from "../store"
 

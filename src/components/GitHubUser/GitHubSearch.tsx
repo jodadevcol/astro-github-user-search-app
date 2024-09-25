@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { configApp, searchGitHubUser } from "../../store";
 import { useStore } from "@nanostores/react";
-import { cx } from "./GitHubAccount";
+import { cx } from "@tools/index";
 
 function GitHubSearch() {
   const submitForm = useRef(null)
@@ -18,26 +18,19 @@ function GitHubSearch() {
   }
 
   return (
-    <div className="bg-dark-300 overflow-hidden rounded-2xl px-3 py-3">
+    <div className="bg-light-500 dark:bg-dark-300 overflow-hidden rounded-2xl px-3 py-3 shadow-[0px_16px_30px_-10px_rgba(70,96,187,0.20)] dark:shadow-none">
       <form onSubmit={handleSubmitSearch} className="flex items-center justify-between gap-x-6">
         <div className="flex items-center justify-start w-full ml-5">
           <span className="block mr-6 size-6 text-shared-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={1.5}
-              viewBox="0 0 24 24"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" width={25} height={24} >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                fill="currentColor"
+                d="M10.609 0c5.85 0 10.608 4.746 10.608 10.58 0 2.609-.952 5-2.527 6.847l5.112 5.087a.87.87 0 0 1-1.227 1.233l-5.118-5.093a10.58 10.58 0 0 1-6.848 2.505C4.759 21.16 0 16.413 0 10.58S4.76 0 10.609 0zm0 1.74c-4.891 0-8.87 3.965-8.87 8.84 0 4.874 3.979 8.84 8.87 8.84a8.855 8.855 0 0 0 6.213-2.537l.04-.047a.881.881 0 0 1 .058-.053 8.786 8.786 0 0 0 2.558-6.203c0-4.875-3.979-8.84-8.87-8.84z"
               />
             </svg>
           </span>
 
-          <label htmlFor="search-github" className="text-white w-full">
+          <label htmlFor="search-github" className="text-light-300 dark:text-white w-full">
             <input className="appearance-none text-lg bg-transparent w-full placeholder:text-current focus:outline-none caret-shared-100" type="text" name="search-github" id="search-github" placeholder="Search GitHub username…" />
           </label>
         </div>

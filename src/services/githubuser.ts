@@ -1,5 +1,5 @@
 import { Octokit } from "@octokit/core"
-import { TOKEN_AUTH_GITHUB } from "../../const"
+import { TOKEN_AUTH_GITHUB } from "../const"
 
 const GETUserGitHub = async ({ username }: { username: string }) => {
 	try {
