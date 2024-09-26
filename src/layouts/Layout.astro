@@ -49,6 +49,14 @@ const { title } = Astro.props
 		@apply mx-auto w-full max-w-screen-md;
 	}
 
+	.cards-user {
+		@apply shadow-container-user overflow-hidden rounded-2xl bg-light-500 text-light-200 dark:bg-dark-300 dark:text-dark-100 dark:shadow-none;
+	}
+
+	.animation-colors-text {
+		@apply transition-colors duration-300 ease-out;
+	}
+
 	input:-webkit-autofill,
 	input:-webkit-autofill:hover,
 	input:-webkit-autofill:focus,

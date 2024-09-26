@@ -11,6 +11,9 @@ export default {
 				shared: {
 					100: "#0079FF",
 					200: "#F74646",
+					300: "#60ABFF",
+					400: "#90A4D4",
+					500: "#222731",
 				},
 				light: {
 					100: "#697C9A",
@@ -64,6 +67,9 @@ export default {
 			},
 			maxWidth: {
 				"screen-md": "49rem",
+			},
+			boxShadow: {
+				"container-user": "0px 16px 30px -10px rgba(70,96,187,0.20)",
 			},
 		},
 	},

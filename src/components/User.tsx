@@ -1,11 +1,13 @@
 function UserData({
   name,
   login,
+  github,
   joinedDate,
   biography
 }: {
   name: string,
   login: string,
+    github: string,
   joinedDate: string,
   biography?: string
 }) {
@@ -17,7 +19,9 @@ function UserData({
         <span className='text-base'>Joined {joinedDate}</span>
       </div>
 
-      <span className='text-shared-100 text-base'>@{login}</span>
+      <a className="text-shared-100 text-base" href={github} target="_blank">
+        <span className=''>@{login}</span>
+      </a>
 
       {
         biography && (

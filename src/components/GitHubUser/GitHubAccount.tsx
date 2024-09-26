@@ -13,7 +13,7 @@ function GitHubAccount() {
   }, [username])
 
   return (
-    <article className='flex place-content-center bg-light-500 dark:bg-dark-300 overflow-hidden rounded-2xl px-12 py-12 shadow-[0px_16px_30px_-10px_rgba(70,96,187,0.20)] text-light-200 dark:text-dark-100 dark:shadow-none'>
+    <article className='cards-user flex place-content-center px-12 py-12'>
       {
         error.status && !loading && <div className='w-full text-center'><span className='font-bold text-xl text-current'>{error.message}</span></div>
       }
