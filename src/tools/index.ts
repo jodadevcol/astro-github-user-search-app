@@ -14,4 +14,16 @@ function formatDate(date: string) {
 	})
 }
 
-export { cx, formatDate }
+function cleanHyperlink(hyperlink: string) {
+	return hyperlink.replace(/^https?:\/\//i, "")
+}
+
+function restructureHyperlink(hyperlink: string, host: string = "https://") {
+	if (!hyperlink) return hyperlink
+
+	const hasProtocol = /^https?:\/\//i.test(hyperlink)
+
+	return hasProtocol ? hyperlink : `${host}${hyperlink}`
+}
+
+export { cx, formatDate, restructureHyperlink, cleanHyperlink }

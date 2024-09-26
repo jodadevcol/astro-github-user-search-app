@@ -1,13 +1,13 @@
 import { cx } from "@tools/index"
 import { ContainerIcon, NotAvailable } from "."
 
-function LinksContainer({ links }: { links: Array<{ icon: any, property: string, hyperlink: boolean }> }) {
+function LinksContainer({ links }: { links: Array<{ icon: any, property: string, hyperlink: boolean, hyperlink_value?: string }> }) {
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-4 md:gap-y-4 md:gap-x-6'>
       {
-        links.map(({ icon: IconComp, property, hyperlink }, index) => {
+        links.map(({ icon: IconComp, property, hyperlink, hyperlink_value }, index) => {
           return (
-            <LinkBoxProperty key={index} disabled={property} hyperlink={hyperlink} hyperlink_value={property}>
+            <LinkBoxProperty key={index} disabled={property} hyperlink={hyperlink} hyperlink_value={hyperlink_value}>
               <ContainerIcon>
                 <IconComp />
               </ContainerIcon>
@@ -30,9 +30,18 @@ function LinkBoxProperty({ children, disabled, hyperlink, hyperlink_value }: any
 
   return (
     <div className={boxClass} aria-disabled={!disabled}>
-      <a className="flex items-center justify-start gap-x-4 max-w-max" href={hyperlink ? hyperlink_value : ''}  >
-        {children}
-      </a>
+      {
+        hyperlink_value
+          ? (
+            <a className="flex items-center justify-start gap-x-4 max-w-max" href={hyperlink_value} target='_blank'  >
+              {children}
+            </a>
+          ) : (
+            <div className="flex items-center justify-start gap-x-4 max-w-max" >
+              {children}
+            </div>
+          )
+      }
     </div>
   )
 }
